@@ -96,6 +96,17 @@ export default function GameRoom(props) {
   };
 
   useEffect(() => {
+    let cancelCb = () => null;
+    if (room !== -1) {
+      const _job = selfInfoRef.current.job;
+      const _targetMap = grpStateTableRef.current[_job].usersMap;
+      cancelCb = fb.disconnect(null, `/clue/${room}/${_job}/${_targetMap[name]}`);
+    }
+
+    return () => cancelCb();
+  }, [ room ]);
+
+  useEffect(() => {
     const beforeunloadEvent = () => {
       const _job = selfInfoRef.current.job;
 

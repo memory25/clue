@@ -30,6 +30,7 @@ body
     width: 100vw
     height: 100vh
     display: flex
+    cursor: default
     //background: black
 
     .roomWrapper
@@ -108,6 +109,7 @@ body
                 top: 0
                 left: 0
                 background: rgba(0,0,0, 0.6)
+                z-index: 9999
                 .confirm
                     width: 100px
                     height: 300px
@@ -156,16 +158,32 @@ body
                 flex-wrap: wrap
                 padding: 10px
                 .card
-                    width: 64px
-                    height: 64px
+                    width: 98px
+                    height: 98px
                     margin: 10px
+                    border: 5px solid
+                    box-sizing: border-box
+                    img
+                        max-width: 100%
+                        width: 100%
                     &:hover
                         background: #00bfa5
                     &.blueCard
-                        background: blue
+                        border-color: blue
+                        background: rgba(7, 114, 230, 0.8)
                     &.redCard
-                        background: red
+                        border-color: red
+                        background: rgba(209, 6, 6, 0.8)
                     &.dieCard
-                        background: black
+                        border-color: black
+                        background: rgba(0, 0, 0, 0.8)
+                        animation: 2s bomb infinite
                     &.peopleCard
-                        background: #fff
+                        border-color: #fff
+                        background: rgba(255,255,255, 0.8)
+
+@keyframes bomb
+    0%
+        background: #fff
+    100%
+        background: #000

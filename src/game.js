@@ -20,7 +20,7 @@ export default function Game(props) {
   const { selfJob, selfRef, first, mistmap } = props;
   const { room } = selfRef.current;
 
-  const [ skyEyes, setSkyEyes ] = useState(false);
+  const [ skyEyes, setSkyEyes ] = useState(() => selfJob === 'blue1' || selfJob === 'red1');
   window.skyEyes = setSkyEyes;
 
   const {

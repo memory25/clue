@@ -1,4 +1,5 @@
-import { ref, push, set, get, child, remove } from 'firebase/database';
+import { ref, push, set, get, child, remove, onDisconnect } from 'firebase/database';
+
 
 function del(key) {
   return remove(ref(window.db, key));
@@ -46,6 +47,13 @@ function idFormatter(snapshot) {
   };
 }
 
+function disconnect(data, key) {
+  const _disconnectRef = onDisconnect(ref(window.db, key));
+  _disconnectRef.set(data);
+
+  return _disconnectRef.cancel.bind(_disconnectRef);
+}
+
 
 const fb = {
   write,
@@ -53,6 +61,7 @@ const fb = {
   append,
   del,
   idFormatter,
+  disconnect,
 };
 
 export default fb;

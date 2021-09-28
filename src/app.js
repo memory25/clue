@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue, onDisconnect } from 'firebase/database';
 
 import { fbConfig } from './appConst';
 import fb from './fbFunc';
 
 import GameRoom from './gameroom';
 import Roombar from './roombar';
+
 
 export default function App(props) {
   const [ roomList, setRoomList ] = useState([]);
@@ -40,12 +41,24 @@ export default function App(props) {
   }, []);
 
   useEffect(() => {
+    const { room, name } = selfRef.current;
+    let cancelCb = () => null;
+    if (room !== -1) {
+      const _usersMap = roomInfoRef.current[room].usersMap;
+      cancelCb = fb.disconnect(null, `/clue/${room}/users/${_usersMap[name]}`);
+    }
+
+    return () => cancelCb();
+  }, [ self.room ]);
+
+  useEffect(() => {
     initializeApp(fbConfig);
 
     const db = getDatabase();
     const dbRef = ref(db);
     window.db = db;
     window.dbRef = dbRef;
+
 
     fb.read('/clue/room').then((_room) => {
       setRoomList(_room);
