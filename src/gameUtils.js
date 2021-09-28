@@ -1,7 +1,7 @@
 import { ref, set, get, child, onValue } from 'firebase/database';
 
 
-const totalImages = 100;
+const totalImages = 177;
 
 function randomSort(array) {
   const promoteArr = [ ...array ].sort(() => Math.random() - 0.5);

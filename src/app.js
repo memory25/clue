@@ -9,6 +9,7 @@ import GameRoom from './gameroom';
 import Roombar from './roombar';
 
 
+console.log('ver: 0928 0621');
 export default function App(props) {
   const [ roomList, setRoomList ] = useState([]);
   const [ roomInfo, setRoomInfo ] = useState({});
