@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "cross-env react-app-rewired start --experimental-modules",
-    "build": "cross-env PUBLIC_URL='/aram/build/' GENERATE_SOURCEMAP=false react-app-rewired build",
+    "build": "cross-env PUBLIC_URL='/clue/build/' GENERATE_SOURCEMAP=false react-app-rewired build",
     "simulator": "cross-env REACT_APP_SIMULATOR=true react-app-rewired start",
     "simulator:build": "cross-env REACT_APP_SIMULATOR=true GENERATE_SOURCEMAP=false react-app-rewired build",
     "eject": "react-scripts eject"

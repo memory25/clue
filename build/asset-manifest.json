@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/aram/build/static/css/main.48ed4f2e.chunk.css",
-    "main.js": "/aram/build/static/js/main.fa453355.chunk.js",
-    "runtime-main.js": "/aram/build/static/js/runtime-main.2941ade4.js",
-    "static/js/2.a28b84dc.chunk.js": "/aram/build/static/js/2.a28b84dc.chunk.js",
-    "index.html": "/aram/build/index.html",
-    "precache-manifest.17c3229d38a59efcfcfa7c9c8d8a0709.js": "/aram/build/precache-manifest.17c3229d38a59efcfcfa7c9c8d8a0709.js",
-    "service-worker.js": "/aram/build/service-worker.js",
-    "static/js/2.a28b84dc.chunk.js.LICENSE.txt": "/aram/build/static/js/2.a28b84dc.chunk.js.LICENSE.txt"
+    "main.css": "/clue/build/static/css/main.48ed4f2e.chunk.css",
+    "main.js": "/clue/build/static/js/main.fa453355.chunk.js",
+    "runtime-main.js": "/clue/build/static/js/runtime-main.bfc1762f.js",
+    "static/js/2.720c3f3a.chunk.js": "/clue/build/static/js/2.720c3f3a.chunk.js",
+    "index.html": "/clue/build/index.html",
+    "precache-manifest.bf1fd8e17554cbb49f89b68e826ca3c8.js": "/clue/build/precache-manifest.bf1fd8e17554cbb49f89b68e826ca3c8.js",
+    "service-worker.js": "/clue/build/service-worker.js",
+    "static/js/2.720c3f3a.chunk.js.LICENSE.txt": "/clue/build/static/js/2.720c3f3a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2941ade4.js",
-    "static/js/2.a28b84dc.chunk.js",
+    "static/js/runtime-main.bfc1762f.js",
+    "static/js/2.720c3f3a.chunk.js",
     "static/css/main.48ed4f2e.chunk.css",
     "static/js/main.fa453355.chunk.js"
   ]
