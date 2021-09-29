@@ -256,7 +256,7 @@ export default function GameRoom(props) {
             <div>
               {isPeopleReady && !isLock && (
                 <div>
-                  <button onClick={start}>開始</button>
+                  <button disabled={cardNumIpt > 100} onClick={start}>開始</button>
                 </div>
               )}
               {ing && (
