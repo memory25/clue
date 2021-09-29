@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c0083ff1fad2d3d1c939a89a88a0af88",
+    "revision": "68dace3242f8c4293f4b1f9f6c03d3ec",
     "url": "/clue/build/index.html"
   },
   {
-    "revision": "b03da7846cf2846fee1e",
+    "revision": "e2b53351436ccf077439",
     "url": "/clue/build/static/css/main.c7a8670f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/clue/build/static/js/2.707ca0ae.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b03da7846cf2846fee1e",
-    "url": "/clue/build/static/js/main.40361312.chunk.js"
+    "revision": "e2b53351436ccf077439",
+    "url": "/clue/build/static/js/main.c4c57dff.chunk.js"
   },
   {
     "revision": "bd4608d8f805ad1ec68e",

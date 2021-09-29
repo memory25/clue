@@ -121,6 +121,7 @@ export default function Game(props) {
       setMsgR((pre) => [ ...pre, msg ]);
     }
     setSelfOpen(-1);
+    setSelectCount(0)
   }, [ actionStatus ]);
 
   useEffect(() => {

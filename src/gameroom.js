@@ -10,6 +10,7 @@ export default function GameRoom(props) {
   const { room, name } = selfRef.current;
 
   const targetRoomInfo = roomInfo[room];
+
   const host = targetRoomInfo?.users?.[0] || '';
   const isHost = name === host;
 
@@ -96,15 +97,16 @@ export default function GameRoom(props) {
   };
 
   useEffect(() => {
-    const _job = selfInfoRef.current.job;
     let cancelCb = () => null;
-    if (room !== -1 && _job !== '') {
-      const _targetMap = grpStateTableRef.current[_job].usersMap;
-      cancelCb = fb.disconnect(null, `/clue/${room}/${_job}/${_targetMap[name]}`);
+
+    if (room !== -1 && selfJob !== '') {
+      const _targetMap = grpStateTableRef.current[selfJob].usersMap;
+
+      cancelCb = fb.disconnect(null, `/clue/${room}/${selfJob}/${_targetMap[name]}`);
     }
 
     return () => cancelCb();
-  }, [ room ]);
+  }, [ room, selfJob ]);
 
   useEffect(() => {
     const beforeunloadEvent = () => {
