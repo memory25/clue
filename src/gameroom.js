@@ -96,9 +96,9 @@ export default function GameRoom(props) {
   };
 
   useEffect(() => {
+    const _job = selfInfoRef.current.job;
     let cancelCb = () => null;
-    if (room !== -1) {
-      const _job = selfInfoRef.current.job;
+    if (room !== -1 && _job !== '') {
       const _targetMap = grpStateTableRef.current[_job].usersMap;
       cancelCb = fb.disconnect(null, `/clue/${room}/${_job}/${_targetMap[name]}`);
     }
@@ -198,14 +198,6 @@ export default function GameRoom(props) {
   && (bombNumIpt < 4);
 
   const isLock = ing || !isHost;
-
-  // isPeopleReady && !isLock
-  console.log({
-    isPeopleReady,
-    isLock,
-    isHost,
-    ing,
-  });
 
   return (
     <div className='gameroom'>

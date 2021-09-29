@@ -170,20 +170,22 @@ body
                         background: #00bfa5
                     &.blueCard
                         border-color: blue
-                        background: rgba(7, 114, 230, 0.8)
+                        background: rgba(7, 114, 230, 0.5)
                     &.redCard
                         border-color: red
-                        background: rgba(209, 6, 6, 0.8)
+                        background: rgba(209, 6, 6, 0.5)
                     &.dieCard
                         border-color: black
-                        background: rgba(0, 0, 0, 0.8)
-                        animation: 2s bomb infinite
+                        background: transparent
+                        animation: 2s bomb infinite alternate
                     &.peopleCard
                         border-color: #fff
-                        background: rgba(255,255,255, 0.8)
+                        background: rgba(255,255,255, 0.5)
 
 @keyframes bomb
     0%
-        background: #fff
+        border-color: #fff
+    50%
+        border-color: #000
     100%
-        background: #000
+        border-color: #fff
