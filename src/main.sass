@@ -4,7 +4,8 @@ html
 
 body
     margin: 0
-    background: #b06000
+    background: rgb(136, 18, 71)
+    color: #fff
 *
     box-sizing: border-box
 
@@ -67,7 +68,6 @@ body
                     .label
                         color: #fff
                     span
-                        color: #000
                         pointer-events: none
                         &.isSelf
                             color: lightblue
@@ -163,11 +163,21 @@ body
                     margin: 10px
                     border: 5px solid
                     box-sizing: border-box
+                    position: relative
+                    margin-bottom: 20px
+                    .serNum
+                        position: absolute
+                        left: 0px
+                        bottom: -23px
+                        opacity: 0
                     img
                         max-width: 100%
                         width: 100%
                     &:hover
+                        opacity: 1
                         background: #00bfa5
+                        .serNum
+                            opacity: 1
                     &.blueCard
                         border-color: blue
                         background: rgba(7, 114, 230, 0.5)

@@ -49,6 +49,7 @@ export default function Game(props) {
   const redSet = useMemo(() => new Set(redList), [ redList ]);
   const dieSet = useMemo(() => new Set(dieList), [ dieList ]);
   const peopleSet = useMemo(() => new Set(peopleList), [ peopleList ]);
+  const openSet = useMemo(() => new Set(openList), [ openList ]);
 
   const blueOpenSet = useMemo(() => {
     const _set = new Set();
@@ -88,8 +89,6 @@ export default function Game(props) {
   };
 
   const handleCardOnClick = (id) => () => {
-    const openSet = new Set(openList);
-
     if (!openSet.has(id)) {
       openSet.add(id);
       setSelfOpen(id);
@@ -102,8 +101,17 @@ export default function Game(props) {
 
   const handlePrompClick = () => {
     const _actionStatus = actionStatus === 5 ? 0 : actionStatus + 1;
+
+    let _numIpt = numIpt;
+    if (numIpt < 1) {
+      _numIpt = 1;
+    }
+    if (numIpt > blueList.length) {
+      _numIpt = blueList.length;
+    }
+
     fb.write(_actionStatus, `/clue/${room}/actionStatus`);
-    fb.write(`${wordIpt}, ${numIpt}`, `/clue/${room}/msg`);
+    fb.write(`${wordIpt}, ${_numIpt}`, `/clue/${room}/msg`);
   };
 
 
@@ -121,7 +129,7 @@ export default function Game(props) {
       setMsgR((pre) => [ ...pre, msg ]);
     }
     setSelfOpen(-1);
-    setSelectCount(0)
+    setSelectCount(0);
   }, [ actionStatus ]);
 
   useEffect(() => {
@@ -152,7 +160,7 @@ export default function Game(props) {
   const maxSelectNum = Number(msgSplit[msgSplit.length - 1]) + 1;
   const isYourRound = actionStatus2Job[actionStatus] === selfJob;
   const isGuessStop = peopleSet.has(selfOpen) || (selfJob === 'blue2' ? redSet.has(selfOpen) : blueSet.has(selfOpen));
-  const isDie = dieSet.has(selfOpen);
+  const isDie = openList.some((id) => dieSet.has(id));
   const isGameOver = isDie || (blueOpenSet.size === blueSet.size) || (redOpenSet.size === redSet.size);
   const canSelect = isYourRound && (maxSelectNum > selectCount) && !isGuessStop && !isGameOver;
 
@@ -173,7 +181,7 @@ export default function Game(props) {
       {showPromp && (
       <div className='prompt'>
         <input value={wordIpt} onChange={(e) => setWord(e.target.value)} placeholder='Word' type='text' style={{ 'width': 60 }} />
-        <input value={numIpt} onChange={(e) => setNum(Number(e.target.value))} placeholder='Num' type='text' style={{ 'width': 35 }} />
+        <input value={numIpt} onChange={(e) => setNum(e.target.value)} placeholder='Num' type='number' style={{ 'width': 45 }} />
         <button onClick={handlePrompClick} disabled={wordIpt === '' || Number(numIpt) === 0}>送出</button>
       </div>
       )}
@@ -225,7 +233,7 @@ export default function Game(props) {
           <div
             key={id}
             onClick={canSelect ? handleCardOnClick(id) : null}
-            style={{ 'cursor': canSelect ? 'pointer' : 'not-allowed' }}
+            style={{ 'cursor': canSelect ? 'pointer' : 'not-allowed', 'opacity': openSet.has(id) ? 0.2 : 1 }}
             className={`card${judgeIdentity({
               id,
               blueSet,
@@ -236,6 +244,7 @@ export default function Game(props) {
               skyEyes,
             })} ${id}`}
           >
+            <span className='serNum'>{id}</span>
             <img src={require(`./imgs/${id}.png`)} alt='' />
           </div>
         ))}
