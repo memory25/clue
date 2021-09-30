@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/clue/build/static/css/main.18694959.chunk.css",
-    "main.js": "/clue/build/static/js/main.b8aa51aa.chunk.js",
+    "main.css": "/clue/build/static/css/main.dbd77e3e.chunk.css",
+    "main.js": "/clue/build/static/js/main.841c2997.chunk.js",
     "runtime-main.js": "/clue/build/static/js/runtime-main.bfc1762f.js",
     "static/js/2.707ca0ae.chunk.js": "/clue/build/static/js/2.707ca0ae.chunk.js",
     "index.html": "/clue/build/index.html",
-    "precache-manifest.84a407bd6be5aef071f597312f31d432.js": "/clue/build/precache-manifest.84a407bd6be5aef071f597312f31d432.js",
+    "precache-manifest.fff9ef28348657938a96a3d762eed866.js": "/clue/build/precache-manifest.fff9ef28348657938a96a3d762eed866.js",
     "service-worker.js": "/clue/build/service-worker.js",
     "static/js/2.707ca0ae.chunk.js.LICENSE.txt": "/clue/build/static/js/2.707ca0ae.chunk.js.LICENSE.txt",
     "static/media/104.png": "/clue/build/static/media/104.eab17db7.png",
@@ -96,7 +96,7 @@
   "entrypoints": [
     "static/js/runtime-main.bfc1762f.js",
     "static/js/2.707ca0ae.chunk.js",
-    "static/css/main.18694959.chunk.css",
-    "static/js/main.b8aa51aa.chunk.js"
+    "static/css/main.dbd77e3e.chunk.css",
+    "static/js/main.841c2997.chunk.js"
   ]
 }

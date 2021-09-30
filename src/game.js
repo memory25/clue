@@ -187,7 +187,7 @@ export default function Game(props) {
       )}
       <div className='log'>
         <div className='logB'>
-          <span style={{ 'background': 'blue', 'color': '#fff' }}>
+          <span style={{ 'background': 'rgb(136, 141, 251)', 'color': '#fff' }}>
             {blueOpenSet.size}
             /
             {blueSet.size}
@@ -220,7 +220,7 @@ export default function Game(props) {
           {isGameOver && <div>Game Over</div>}
         </div>
         <div className='logR'>
-          <span style={{ 'background': 'red', 'color': '#fff' }}>
+          <span style={{ 'background': 'rgb(248, 124, 128)', 'color': '#fff' }}>
             {redOpenSet.size}
             /
             {redSet.size}
