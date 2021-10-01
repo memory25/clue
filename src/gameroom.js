@@ -197,7 +197,7 @@ export default function GameRoom(props) {
   && b2?.users?.length >= 1
   && r1?.users?.length >= 1
   && r2?.users?.length >= 1
-  && (bombNumIpt < 4);
+  && (bombNumIpt <= 4);
 
   const isLock = ing || !isHost;
 

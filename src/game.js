@@ -120,13 +120,13 @@ export default function Game(props) {
       setShowConfirm(true);
     }
     if (actionStatus === 2) {
-      setMsgB((pre) => [ ...pre, msg ]);
+      setMsgB((pre) => [ msg, ...pre ]);
     }
     if (actionStatus === 4 && selfJob === 'blue1') {
       setShowConfirm(true);
     }
     if (actionStatus === 5) {
-      setMsgR((pre) => [ ...pre, msg ]);
+      setMsgR((pre) => [ msg, ...pre ]);
     }
     setSelfOpen(-1);
     setSelectCount(0);
@@ -187,12 +187,12 @@ export default function Game(props) {
       )}
       <div className='log'>
         <div className='logB'>
-          <span style={{ 'background': 'rgb(136, 141, 251)', 'color': '#fff' }}>
+          <span style={{ 'background': 'rgb(136, 141, 251)', 'color': '#fff', 'position': 'absolute', 'top': 0, 'width': '100%', 'textAlign': 'center' }}>
             {blueOpenSet.size}
             /
             {blueSet.size}
           </span>
-          {msgB.map((m, i) => <span key={i}>{m}</span>)}
+          {msgB.map((m, i) => <span className='msg' key={i}>{m}</span>)}
         </div>
         <div className='logStatus'>
           {isYourRound && !isGameOver
@@ -220,12 +220,12 @@ export default function Game(props) {
           {isGameOver && <div>Game Over</div>}
         </div>
         <div className='logR'>
-          <span style={{ 'background': 'rgb(248, 124, 128)', 'color': '#fff' }}>
+          <span style={{ 'background': 'rgb(248, 124, 128)', 'color': '#fff', 'position': 'absolute', 'top': 0, 'width': '100%', 'textAlign': 'center' }}>
             {redOpenSet.size}
             /
             {redSet.size}
           </span>
-          {msgR.map((m, i) => <span key={i}>{m}</span>)}
+          {msgR.map((m, i) => <span className='msg' key={i}>{m}</span>)}
         </div>
       </div>
       <div className='cardWrapper'>
@@ -252,21 +252,3 @@ export default function Game(props) {
     </div>
   );
 }
-
-
-/*
-{ list.map((_, i) => (
-  <div
-    key={i}
-    style={{
-      'width': 50,
-      'height': 50,
-    // 'backgroundImage': `url(${require('./imgs/champion50.png')})`,
-      'backgroundPosition': `0 ${i * -50}px`,
-    }}
-  >
-    {1}
-  </div>
-)); }
-*/
-// <img src={require('./imgs/champion50.png')} alt='Background' />

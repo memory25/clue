@@ -100,7 +100,7 @@ body
         .game
             display: flex
             flex-wrap: wrap
-            padding-top: 110px
+            padding-top: 160px
             position: relative
             .confirmWrapper
                 position: fixed
@@ -143,11 +143,12 @@ body
                     display: flex
                     flex-direction: column
                     overflow: auto
-                    width: 100px
-                    height: 100px
+                    width: 150px
+                    height: 150px
                     border: 1px solid
-                &R
+                    padding-top: 20px
                     text-align: right
+                    position: relative
                 .logStatus
                     .selecting
                         display: flex
@@ -155,9 +156,11 @@ body
                         justify-content: space-around
                         height: 100%
             .cardWrapper
-                display: flex
-                flex-wrap: wrap
                 padding: 10px
+                max-width: 1200px
+                height: calc(100vh - 300px)
+                margin: 0 auto
+                overflow: auto
                 .card
                     width: 98px
                     height: 98px
@@ -166,6 +169,7 @@ body
                     box-sizing: border-box
                     position: relative
                     margin-bottom: 20px
+                    display: inline-block
                     .serNum
                         position: absolute
                         left: 0px
@@ -176,7 +180,7 @@ body
                         width: 100%
                     &:hover
                         opacity: 1
-                        background: #00bfa5
+                        background: #00bfa5 !important
                         .serNum
                             opacity: 1
                     &.blueCard
