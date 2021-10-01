@@ -1,5 +1,5 @@
 
-const totalImages = 483;
+const totalImages = 634;
 
 function randomSort(array) {
   const promoteArr = [ ...array ].sort(() => Math.random() - 0.5);
